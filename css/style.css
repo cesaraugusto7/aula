@@ -1,0 +1,59 @@
+.body {
+  margin: 0px;
+  margin-top: 15px;
+  padding: 0px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.display {
+  font-family: 'Roboto', sans-serif;
+  font-size: 70px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100vw;
+  height: 120px;
+}
+
+.box {
+  width: 125px;
+  height: 120px;
+}
+
+.double_box_h {
+  width: 125px;
+  height: 240px;
+}
+
+.double_box_w {
+  width: 250px;
+  height: 120px;
+}
+
+.color1 {
+  background-color: rgb(250, 237, 226);
+}
+
+.color2 {
+  background-color: rgb(252, 208, 166);
+}
+
+.color3 {
+  background-color: rgb(255, 155, 61);
+}
+
+
+.number {}

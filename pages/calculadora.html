@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <title>Calculadora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="body">
+  <div id="calculator"
+    style="width: 500px; height: 720px ;background-color: rgb(133, 133, 133); display: flex; flex-wrap: wrap; padding: 5px;">
+    <div id="display" class="display">0000000000</div>
+    <div style="width: 100vw; height: 120px; display: flex; justify-content: space-around; align-items: center;">
+      <div onclick="clearDisplay()" class="text box color3">C</div>
+      <div class="text box color2">+/-</div>
+      <div onclick="clickText('/')" class="text box color2">/</div>
+      <div onclick="clickText('X')" class="text box color2">X</div>
+    </div>
+    <div style="width: 100vw; height: 120px; display: flex; justify-content: space-around;align-items: center;">
+      <div onclick="clickText(7)" class="text box color1 number">7</div>
+      <div onclick="clickText(8)" class="text box color1 number">8</div>
+      <div onclick="clickText(9)" class="text box color1 number">9</div>
+      <div onclick="clickText('-')" class="text box color2">-</div>
+    </div>
+    <div style="width: 100vw; height: 240px; display: flex; justify-content: space-around; align-items: center;">
+      <div style="display: flex; flex-direction: column; justify-content: space-around;">
+        <div style="display: flex; width: 375px; height: 120px; justify-content: space-around; align-items: center">
+          <div onclick="clickText(4)" class="text box color1 number">4</div>
+          <div onclick="clickText(5)" class="text box color1 number">5</div>
+          <div onclick="clickText(6)" class="text box color1 number">6</div>
+        </div>
+        <div style="display: flex; width: 375px; height: 120px; justify-content: space-around; align-items: center">
+          <div onclick="clickText(1)" class="text box color1 number">1</div>
+          <div onclick="clickText(2)" class="text box color1 number">2</div>
+          <div onclick="clickText(3)" class="text box color1 number">3</div>
+        </div>
+      </div>
+      <div onclick="clickText('+')" class="text double_box_h color2">+</div>
+
+    </div>
+    <div style="display: flex; width: 100vw; height: 120px; justify-content: space-around; align-items: center;">
+      <div style="display: flex; width: 250px; height: 120; justify-content: space-around; align-items: center;">
+        <div onclick="clickText(0)" class="text box color1 number">0</div>
+        <div onclick="clickText('.')" class="text box color1">.</div>
+      </div>
+      <div onclick="resultOperation()" class="text double_box_w color3">=</div>
+    </div>
+  </div>
+  <script src="../js/calculadora.js"></script>
+</body>
+
+</html>
