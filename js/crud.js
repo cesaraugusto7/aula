@@ -105,22 +105,11 @@ function buscaDados() {
     arrayCientes = JSON.parse(resultado);
   }
   listaDados();
-
 }
-
 document.addEventListener('load', buscaDados());
 
 
-
-
-
-
-
-
-
-
-
-
+// https://api.jquery.com/
 
 
 //retornam algo

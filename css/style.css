@@ -54,6 +54,6 @@
 .color3 {
   background-color: rgb(255, 155, 61);
 }
-
-
-.number {}
+.disable-btn {
+  background-color: #b9b5b5 !important;
+}
