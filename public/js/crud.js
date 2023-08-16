@@ -1,7 +1,6 @@
 var arrayCientes = [];
 var emEdicao = null;
-
-function salvar() {
+async function salvar() {
   var nome = document.getElementById('nome').value;
   var cpf = document.getElementById('cpf').value;
   var dataNascimento = document.getElementById('dataNascimento').value;
@@ -34,13 +33,13 @@ function salvar() {
     genero: genero
   }
   if (emEdicao != null) {
-    arrayCientes[emEdicao] = objCliente;
+    await firebase.firestore().collection('clientes').doc(idDocumento).set(objCliente);
   } else {
-    arrayCientes.push(objCliente);
+    await firebase.firestore().collection('clientes').add(objCliente);
   }
   alert('Salvo com sucesso!');
   limparImputs();
-  listaDados();
+  buscaDados();
   emEdicao = null;
   gravaLocalStorage();
 }
@@ -98,48 +97,88 @@ function gravaLocalStorage() {
   localStorage.setItem('arrayCientes', JSON.stringify(arrayCientes));
 }
 
-function buscaDados() {
-  var resultado = localStorage.getItem('arrayCientes');
-  console.log(resultado);
-  if (resultado != undefined && resultado != null) {
-    arrayCientes = JSON.parse(resultado);
+async function buscaDados() {
+  arrayCientes = [];
+  // firebase.firestore().collection('clientes').get().then(function (result) {
+  //   if (result.docs && result.docs.length > 0) {
+  //     var arrayDocs = result.docs;
+  //     for (var index = 0; index < arrayDocs.length; index++) {
+  //       var cliente = arrayDocs[index].data();
+  //       arrayCientes.push(cliente);
+  //     }
+  //     listaDados();
+  //   }
+  // }).catch(function (error) {
+  //   console.log(error);
+  // });
+
+  var result = await firebase.firestore().collection('clientes').get();
+  if (result.docs && result.docs.length > 0) {
+    var arrayDocs = result.docs;
+    for (var index = 0; index < arrayDocs.length; index++) {
+      var cliente = arrayDocs[index].data();
+      arrayCientes.push(cliente);
+    }
+    listaDados();
   }
-  listaDados();
 }
-document.addEventListener('load', buscaDados());
-
-
-// https://api.jquery.com/
-
-
-//retornam algo
-function somaRetorna(num1, num2) {
-  var resultado = num1 + num2
-  return resultado;
-
+window.onload = function () {
+  buscaDados()
 }
 
-// não retornam nada
-// function soma(num1, num2) {
-//   var result = num1 + num2
-//   multiplicaRetorna(result, 5)
+
+
+
+
+
+
+
+
+
+
+// function somar(params1, parmas2) {
+//   var total = params1 + parmas2;
+//   return new Promise(function (resolve, reject) {
+//     setTimeout(function () {
+//       reject(total);
+//     }, 5000);
+
+//   })
+
 // }
+// console.log('Inicia a soma');
+// somar(2, 3)
+//   .then(function (resultado) {
+//     console.log('Resultado da soma: ', resultado);
+//     console.log('Fim da soma');
+//   }).catch(function (error) {
+//     console.log(error)
+//   })
 
-// function multiplicaRetorna(num, mult) {
-//   var result = num * mult;
-//   console.log(result);
+
+// class Veiculo {
+//   cor;
+//   ano;
+//   modelo;
+//   placa;
+
+//   transferir() {
+
+//   }
+
+//   acelerar() {
+//   }
+
+//   freiar() {
+
+//   }
+
+//   velocidadeMedia() {
+
+//   }
+
+//   aceleracao() {
+
+//   }
+
 // }
-
-
-// function multiplicaRetorna(num, mult) {
-//   return num * mult;
-// }
-
-// var resultado = somaRetorna(2 + 2);
-// console.log(resultado);
-
-// var resultadoMult = multiplicaRetorna(resultado, 5);
-// console.log(resultadoMult);
-
-
-// soma(3 + 3);
