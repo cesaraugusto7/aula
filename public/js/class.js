@@ -70,7 +70,7 @@ class Cliente {
   }
 
   getNomeMae() {
-    return this.#sobreNome;
+    return this.#nomeMae;
   }
 
   verificaMaiorIdade() {
