@@ -95,3 +95,107 @@ function teste(cliente) {
   }
 
 }
+
+window.cpfCliente = '703.732.811-10'
+
+
+
+class PecasCarro {
+  descricao;
+  constructor() {
+    this.descricao = this.descricao;
+  }
+}
+
+
+
+
+class Carro {
+  modelo;
+  placa;
+  cor;
+  marca;
+  ano;
+  listaPecas;
+
+  constructor(modelo, cor, marca, ano, listaPecas) {
+    this.modelo = modelo;
+    this.cor = cor;
+    this.marca = marca;
+    this.ano = ano;
+    this.listaPecas = listaPecas;
+  }
+
+  addPlaca(placa) {
+    this.placa = placa;
+  }
+
+}
+
+
+class Moto {
+  modelo;
+  placa;
+  cor;
+  marca;
+  ano;
+  listaPecas;
+
+  constructor({ modelo, cor, marca, ano, listaPecas }) {
+    this.modelo = modelo;
+    this.cor = cor;
+    this.marca = marca;
+    this.ano = ano;
+    this.listaPecas = listaPecas;
+  }
+
+  addPlaca(placa) {
+    this.placa = placa;
+  }
+
+}
+
+
+var obj = {
+  nome: 'Cesar',
+  idade: 26
+}
+
+var { nome, idade } = obj;
+
+
+
+
+
+
+
+class Pessoa {
+  nome;
+  altura;
+  peso;
+  corOlhos;
+
+  constructor() {
+
+  }
+
+  caminhar() {
+  }
+
+  falar() {
+  }
+
+  mastigar() {
+  }
+
+  colocarLente(corDaLente) {
+    this.corOlhos = corDaLente;
+  }
+
+  corOlhos() {
+    return this.corOlhos;
+  }
+
+}
+
+var pessoa1 = new Pessoa();

@@ -65,7 +65,7 @@ class Carro {
 
 
 var carro = new Carro('Gol G5', 'NVT0987', '2011', 30000);
-var pessoa = new Pessoa('Cesar', 'Avenida ferroviaria', '(62) 98448-4720', '1997-09-07',);
+var pessoa = new Pessoa('Cesar', 'Avenida ferroviaria', '(62) 98448-4720', '1997-09-07',[]);
 
 pessoa.setCarro(carro);
 

@@ -1,3 +1,5 @@
+
+//Exemplo 1
 class Pessoa {
   #nome;
   #endereço;
@@ -32,7 +34,7 @@ class Carro {
     this.valor = valor;
   }
 
-  getModelo() {
+  #getModelo() {
     return this.#modelo;
   }
 }
@@ -42,4 +44,52 @@ var carro = new Carro('Gol G5', 'NVT0987', '2011', 30000);
 
 var pessoa = new Pessoa('Cesar', 'Avenida ferroviaria', '(62) 98448-4720', '1997-09-07', carro);
 
-pessoa.getCarro().getModelo();
+
+//Exemplo 2
+
+class Pessoa2 {
+  nome;
+  dataNascimento;
+  cpf;
+  endereco;
+  constructor({ nome, dataNascimento, cpf, endereco }) {
+    this.nome = nome;
+    this.dataNascimento = dataNascimento;
+    this.cpf = cpf;
+  }
+  validarCpf() {
+    if (this.cpf) {
+      return true;
+    }
+  }
+}
+
+class Endereco2 {
+  #logradouro;
+  #bairro;
+  #cidade;
+  cep;
+  #uf;
+  constructor({ cep }) {
+    this.cep = cep;
+    buscaEnderecoCep();
+  }
+
+  buscaEnderecoCep() {
+    this.#logradouro = 'Avenida Ferroviaria';
+    this.#bairro = 'Vila formosa';
+    this.#cidade = 'Anápolis'
+    this.#uf = 'GO';
+  }
+
+  getLogradouro() {
+    return this.#logradouro;
+  }
+
+  stringEndereco() {
+    return `${this.logradouro}-${this.bairro},${this.cidade} - ${this.uf}, ${this.cep}`;
+  }
+
+}
+var endereco = new Endereco2({ cep: '75100-725' });
+var pessoa2 = new Pessoa2({ nome: 'Cesar', dataNascimento: new Date('1997-09-07'), cpf: '703.732.811-10', endereco: endereco });
