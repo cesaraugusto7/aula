@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "438002984280",
+    "project_id": "aulas-e59eb",
+    "storage_bucket": "aulas-e59eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438002984280:android:3862d1d6dbf9ef3ff4b12d",
+        "android_client_info": {
+          "package_name": "com.example.smart_park"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438002984280-r2tbe8q3hkglclia6oi2ecvpru8s49aq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4as2BqcHhUMYiryLUbEbS-S1eC29ojq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438002984280-r2tbe8q3hkglclia6oi2ecvpru8s49aq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
